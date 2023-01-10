@@ -1,13 +1,13 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'post',
-  title: 'Post',
+  name: 'job',
+  title: 'Job',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Title',
+      title: ' Job Title',
       type: 'string',
     }),
     defineField({
@@ -20,46 +20,42 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
+      name: 'location',
+      title: 'Location',
+      type: 'string',
     }),
     defineField({
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      name: 'salary',
+      title: 'Salary',
+      type: 'string',
     }),
     defineField({
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      name: 'description',
+      title: 'Description',
+      type: 'text',
     }),
-    defineField({
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    }),
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-    }),
+    // defineField({
+    //   name: 'author',
+    //   title: 'Author',
+    //   type: 'reference',
+    //   to: {type: 'author'},
+    // }),
+    // defineField({
+    //   name: 'categories',
+    //   title: 'Categories',
+    //   type: 'array',
+    //   of: [{type: 'reference', to: {type: 'category'}}],
+    // }),
   ],
-
-  preview: {
-    select: {
-      title: 'title',
-      author: 'author.name',
-      media: 'mainImage',
-    },
-    prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
-    },
-  },
-})
+  // preview: {
+  //   select: {
+  //     title: 'title',
+  //     author: 'author.name',
+  //     media: 'mainImage',
+  //   },
+  //   prepare(selection) {
+  //     const {author} = selection
+  //     return {...selection, subtitle: author && `by ${author}`}
+  //   },
+  // },
+});
