@@ -20,7 +20,7 @@
       "@/styles/*": ["styles/*"],
       "@/utils/*": ["utils/*"],
       "@/constants/*": ["constants/*"],
-      "@/assets/*": ["assets/*"]
+      "@/lib/*": ["lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "sanity.config.js"],
