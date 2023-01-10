@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#F2F7FB] font-poppins;
+  }
+}
+
+@layer components {
+  .slick-dots {
+    @apply text-sm !important;
+  }
+}
