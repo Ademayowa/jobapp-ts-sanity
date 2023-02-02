@@ -10,27 +10,26 @@ interface Props {
   jobs: Job[];
 }
 
-const Home = ({ jobs }: Props) => {
+export default function HomePage({ jobs }: Props) {
   return (
     <Layout title='Find Gigs | Home'>
-      <main>
+      <>
         <Hero />
         {/* <Search /> */}
         <SectionTitle title='Latest Jobs' />
         <Jobs jobs={jobs} />
-      </main>
+      </>
     </Layout>
   );
-};
+}
 
-export default Home;
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps = async () => {
   const jobs = await fetchJobs();
 
   return {
     props: {
       jobs,
     },
+    revalidate: 60,
   };
 };

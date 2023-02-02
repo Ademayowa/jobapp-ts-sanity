@@ -1,15 +1,17 @@
-function Hero() {
+export default function Hero() {
   return (
-    <div className='h-72 bg-blueColor pl-10 pt-10 md:pl-12 lg:h-96'>
+    <div className='h-72 bg-blueColor pt-10 lg:h-96'>
       <div className='relative lg:pt-5'>
-        <h1 className='text-3xl font-bold !leading-tight text-white lg:w-6/12 lg:text-6xl'>
-          The Easiest Way To Get Your New Job.
-        </h1>
+        <div className='px-5 md:px-20'>
+          <h1 className='text-3xl font-bold !leading-tight text-white lg:w-6/12 lg:text-6xl'>
+            The Easiest Way To Get Your New Job.
+          </h1>
 
-        <p className='!lg:pb-20 mt-5 text-xl font-extralight text-white md:w-9/12 lg:w-5/12'>
-          Searching and finding your dream job is now easier than ever. Just
-          browse a job and apply with ease.
-        </p>
+          <p className='!lg:pb-20 mt-5 text-xl font-extralight text-white md:w-9/12 lg:w-5/12'>
+            Searching and finding your dream job is now easier than ever. Just
+            browse a job and apply with ease.
+          </p>
+        </div>
 
         <div className='hidden lg:block'>
           <div className='absolute -top-10 right-0'>
@@ -28,5 +30,3 @@ function Hero() {
     </div>
   );
 }
-
-export default Hero;
