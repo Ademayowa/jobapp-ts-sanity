@@ -1,18 +1,56 @@
-import Layout from '@/components/Layout';
+import Link from 'next/link';
 import { client } from '@/lib/sanity.client';
+import Layout from '@/components/Layout';
 import { GetStaticProps } from 'next';
+import { BsArrowLeft } from 'react-icons/bs';
+import { MdMonetizationOn } from 'react-icons/md';
+import { GoLocation } from 'react-icons/go';
 import { Job } from '../../typings';
 
 interface Props {
   job: Job;
 }
 
-export default function JobDetails() {
+export default function JobDetails({ job }: Props) {
   return (
-    <Layout title='Job Details'>
-      <div>title here...</div>
+    <Layout title={job.title}>
+      <div className='mx-auto mt-10 w-10/12 rounded-md bg-white shadow-md'>
+        <div className='px-10 py-4 md:mx-10 md:px-12'>
+          <div className='my-4'>
+            <Link href='/jobs'>
+              <a>
+                <BsArrowLeft className='my-5 h-5 w-5 cursor-pointer text-[#EF4444]' />
+              </a>
+            </Link>
+            <h2 className='mt-2 text-lg font-bold text-blueColor md:text-2xl'>
+              {job.title}
+            </h2>
 
-      {/* <h2>Job Details: </h2> */}
+            <div className='mt-2 flex items-center space-x-2'>
+              <GoLocation className='-ml-1 h-5 w-5 text-blue-500' />
+              <p className='text-base text-grayColor md:text-lg'>
+                {job.location}
+              </p>
+            </div>
+
+            <div className='mt-2 flex items-center space-x-2'>
+              <MdMonetizationOn className='-ml-1 h-5 w-5 text-blue-500' />
+              <p className='text-base text-grayColor md:text-lg'>
+                {job.salary}
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr className='border-b border-red-400' />
+
+        <div className='job-post px-10 py-4 text-grayColor md:mx-10 md:px-12'>
+          <div className='mt-5 text-sm !leading-9 md:text-base'>
+            <p className='max-w-4xl'>{job.description}</p>
+            <h4 className='my-4 font-bold'>Job Requirement</h4>
+            <p className='max-w-4xl'>{job.requirement}</p>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }
@@ -46,7 +84,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     title,
     location,
     salary,
-    description
+    description,
+    requirement
   } 
   `;
 

@@ -8,7 +8,7 @@ function Navbar() {
   const [toggle, setToggle] = useState<boolean>(false);
 
   return (
-    <nav className='flex w-full items-center justify-between bg-blueColor py-5 px-12'>
+    <nav className='flex w-full items-center justify-between bg-blueColor py-5 px-5 md:px-20'>
       <Link href='/'>
         <a className='text-lg text-white'>Find Gigs</a>
       </Link>

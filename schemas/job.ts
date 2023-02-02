@@ -34,5 +34,10 @@ export default defineType({
       title: 'Description',
       type: 'text',
     }),
+    defineField({
+      name: 'requirement',
+      title: 'Job Requirement',
+      type: 'text',
+    }),
   ],
 });
