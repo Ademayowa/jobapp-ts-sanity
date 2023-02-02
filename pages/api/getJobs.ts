@@ -20,6 +20,6 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   const jobs: Job[] = await client.fetch(jobQuery);
-  console.log(jobs);
+  // console.log(jobs);
   res.status(200).json({ jobs });
 }

@@ -23,13 +23,12 @@ export default function HomePage({ jobs }: Props) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const jobs = await fetchJobs();
 
   return {
     props: {
       jobs,
     },
-    revalidate: 60,
   };
 };
