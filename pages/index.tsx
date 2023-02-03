@@ -14,12 +14,10 @@ interface Props {
 export default function HomePage({ jobs }: Props) {
   return (
     <Layout title='Find Gigs | Home'>
-      <>
-        <Hero />
-        <Search />
-        <SectionTitle title='Latest Jobs' />
-        <Jobs jobs={jobs} />
-      </>
+      <Hero />
+      <Search />
+      <SectionTitle title='Latest Jobs' />
+      <Jobs jobs={jobs} />
     </Layout>
   );
 }
