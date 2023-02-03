@@ -19,7 +19,7 @@ export default function JobDetails({ job }: Props) {
           <div className='my-4'>
             <Link href='/'>
               <a>
-                <BsArrowLeft className='my-5 h-5 w-5 cursor-pointer text-[#EF4444]' />
+                <BsArrowLeft className='my-5 h-8 w-8 cursor-pointer text-[#EF4444]' />
               </a>
             </Link>
             <h2 className='mt-2 text-lg font-bold text-blueColor md:text-2xl'>
