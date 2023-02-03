@@ -8,8 +8,8 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 export default defineConfig({
   basePath: '/studio',
-  name: 'Jobapp_Content_Studio',
-  title: 'Job Website Studio',
+  name: 'Jobportal_Content_Studio',
+  title: 'Job Portal',
   projectId,
   dataset,
 
