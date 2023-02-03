@@ -5,6 +5,7 @@ import Layout from '@/components/Layout';
 import SectionTitle from '@/components/SectionTitle';
 import { Job } from '../typings';
 import { fetchJobs } from '@/utils/fetchJobs';
+import Search from '@/components/Search';
 
 interface Props {
   jobs: Job[];
@@ -15,7 +16,7 @@ export default function HomePage({ jobs }: Props) {
     <Layout title='Find Gigs | Home'>
       <>
         <Hero />
-        {/* <Search /> */}
+        <Search />
         <SectionTitle title='Latest Jobs' />
         <Jobs jobs={jobs} />
       </>

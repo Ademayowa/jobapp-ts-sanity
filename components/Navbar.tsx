@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { BiUser } from 'react-icons/bi';
 import { navLinks } from '@/constants/index';
 
-function Navbar() {
+export default function Navbar() {
   const [active, setActive] = useState<any>('Home');
   const [toggle, setToggle] = useState<boolean>(false);
 
@@ -62,5 +62,3 @@ function Navbar() {
     </nav>
   );
 }
-
-export default Navbar;

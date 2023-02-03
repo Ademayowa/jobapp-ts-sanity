@@ -9,8 +9,8 @@ export type Job = {
   slug: {
     current: string;
   };
-  requirement: {
-    require: string;
-    _id: string;
-  }[];
+  // requirement: {
+  //   require: string;
+  //   _id: string;
+  // }[];
 };

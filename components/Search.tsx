@@ -1,34 +1,10 @@
 import { useState, useEffect } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
-import axios from 'axios';
-import { BASE_URL } from '@/utils/index';
-import { useRouter } from 'next/router';
-import { IUser, Video } from '../../typings';
 
-function Search({ videos }: { videos: Video[] }) {
-  const router = useRouter();
-  // const { searchTerm }: any = router.query;
-
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-
-  useEffect(() => {
-    const getResults = async () => {
-      if (searchTerm === '') {
-        setSearchResults([]);
-      } else {
-        const res = await fetch(`/api/search?q=${searchTerm}`);
-        const results = await res.json();
-        setSearchResults(results);
-      }
-    };
-
-    getResults();
-  }, [searchTerm]);
-
+export default function Search() {
   return (
-    <div className='relative mx-12 -mt-10 flex flex-col justify-between rounded-lg bg-white px-5 py-10 shadow-lg md:flex-row md:p-5'>
+    <div className='relative mx-20 -mt-10 flex flex-col justify-between rounded-lg bg-white px-5 py-10 shadow-lg md:flex-row md:p-5'>
       <div className='flex items-center space-x-2'>
         <BsSearch className='hidden h-5 w-5 text-sky-500 md:block' />
         <input
@@ -55,17 +31,3 @@ function Search({ videos }: { videos: Video[] }) {
     </div>
   );
 }
-
-export const getServerSideProps = async ({
-  params: { searchTerm },
-}: {
-  params: { searchTerm: string };
-}) => {
-  const res = await axios.get(`${BASE_URL}/api/search/${searchTerm}`);
-
-  return {
-    props: { videos: res.data },
-  };
-};
-
-export default Search;
