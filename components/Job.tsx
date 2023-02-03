@@ -11,10 +11,10 @@ interface Props {
 
 export default function JobPage({ jobs }: Props) {
   return (
-    <div className='grid grid-cols-8 gap-x-7 px-10 md:mx-10 md:px-12'>
+    <div className='grid grid-cols-8 gap-x-7 px-10 md:mx-10 md:px-12 '>
       {jobs?.map((job) => (
         <Link href={`/job/${job.slug.current}`} key={job._id}>
-          <a className='col-span-10 mx-auto my-3 cursor-pointer rounded-lg bg-white p-7 shadow-md lg:col-span-4'>
+          <a className='card-hover col-span-10 mx-auto my-3 rounded-lg bg-white p-7 shadow-md lg:col-span-4'>
             <div className='flex items-center font-bold text-blueColor'>
               <h2 className='flex flex-1 text-lg font-bold text-blueColor md:text-2xl'>
                 {job.title}
