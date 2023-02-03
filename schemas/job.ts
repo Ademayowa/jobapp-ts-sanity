@@ -37,7 +37,8 @@ export default defineType({
     defineField({
       name: 'requirement',
       title: 'Job Requirement',
-      type: 'text',
+      type: 'array',
+      of: [{ type: 'string' }],
     }),
   ],
 });

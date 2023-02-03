@@ -17,7 +17,7 @@ export default function JobDetails({ job }: Props) {
       <div className='mx-auto mt-10 w-10/12 rounded-md bg-white shadow-md'>
         <div className='px-10 py-4 md:mx-10 md:px-12'>
           <div className='my-4'>
-            <Link href='/jobs'>
+            <Link href='/'>
               <a>
                 <BsArrowLeft className='my-5 h-5 w-5 cursor-pointer text-[#EF4444]' />
               </a>
@@ -47,7 +47,6 @@ export default function JobDetails({ job }: Props) {
           <div className='mt-5 text-sm !leading-9 md:text-base'>
             <p className='max-w-4xl'>{job.description}</p>
             <h4 className='my-4 font-bold'>Job Requirement</h4>
-            <p className='max-w-4xl'>{job.requirement}</p>
           </div>
         </div>
       </div>
@@ -84,8 +83,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     title,
     location,
     salary,
-    description,
-    requirement
+    description
   } 
   `;
 
