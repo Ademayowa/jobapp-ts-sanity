@@ -4,7 +4,7 @@ import Layout from '@/components/Layout';
 import { GetStaticProps } from 'next';
 import { BsArrowLeft } from 'react-icons/bs';
 import { MdMonetizationOn } from 'react-icons/md';
-import { GoLocation } from 'react-icons/go';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { Job } from '../../typings';
 
 interface Props {
@@ -19,7 +19,7 @@ export default function JobDetails({ job }: Props) {
           <div className='my-4'>
             <Link href='/'>
               <a>
-                <BsArrowLeft className='my-5 h-5 w-5 cursor-pointer text-[#EF4444]' />
+                <BsArrowLeft className='my-5 h-8 w-8 cursor-pointer text-[#EF4444]' />
               </a>
             </Link>
             <h2 className='mt-2 text-lg font-bold text-blueColor md:text-2xl'>
@@ -27,7 +27,7 @@ export default function JobDetails({ job }: Props) {
             </h2>
 
             <div className='mt-2 flex items-center space-x-2'>
-              <GoLocation className='-ml-1 h-5 w-5 text-blue-500' />
+              <HiOutlineLocationMarker className='-ml-1 h-5 w-5 text-blue-500' />
               <p className='text-base text-grayColor md:text-lg'>
                 {job.location}
               </p>

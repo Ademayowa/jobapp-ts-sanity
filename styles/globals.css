@@ -9,7 +9,7 @@
 }
 
 @layer components {
-  .slick-dots {
-    @apply text-sm !important;
+  .card-hover {
+    @apply transform transition duration-300 hover:scale-105;
   }
 }
